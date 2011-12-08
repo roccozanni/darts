@@ -1,0 +1,111 @@
+!!! 5
+html(lang="en")
+    head
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css")
+    body
+        
+        div(data-role="page", id="game")
+            div(data-role="header")
+                h1 Start game
+            div(data-role="content")
+
+                button(type="submit", data-theme="a", onclick="createGameUp(301); return false;") Up to 301
+                button(type="submit", data-theme="b", onclick="createGameClock(10); return false;") Clock
+                button(type="submit", data-theme="e", onclick="createGameCricket(15); return false;") Cricket
+
+        div(data-role="page", id="scores")
+            div(data-role="header")
+                a(href="#game", data-theme="b", data-icon="home", data-iconpos="notext") Home
+                h1 
+                    span#current_game None
+                a(href="#submit", data-theme="b", data-icon="plus", data-iconpos="notext", data-rel="dialog", data-transition="pop") Submit score
+            div(data-role="content")
+
+                div.ui-grid-b
+                    div.ui-block-a
+                        button#btn_Rocco.btn_player(type="submit", data-theme="b", onclick="setPlayer('Rocco'); return false;") Rocco
+                    div.ui-block-b
+                        button#btn_Marco.btn_player(type="submit", data-theme="b", onclick="setPlayer('Marco'); return false;") Marco
+                    div.ui-block-c
+                        button#btn_Alex.btn_player(type="submit", data-theme="b", onclick="setPlayer('Alex'); return false;") Alex
+
+                ul#players_scores(data-role="listview", data-inset="true", data-divider-theme="a")
+                    li(data-role="list-divider") Current player is: 
+                        span.current_player None
+                    li(data-icon="false") Rocco
+                        span#score_Rocco.ui-li-count 0
+                    li(data-icon="false") Marco
+                        span#score_Marco.ui-li-count 0
+                    li(data-icon="false") Alex
+                        span#score_Alex.ui-li-count 0
+
+                h2#winner
+                
+
+        div(data-role="page", id="submit")
+            div(data-role="header")
+                h1 
+                    span.current_player None
+            div(data-role="content")
+                
+                div.ui-grid-a
+                    div.ui-block-a
+                        button(type="submit", data-theme="b", onclick="setMultiplier(2); return false;") x2
+                    div.ui-block-b
+                        button(type="submit", data-theme="e", onclick="setMultiplier(3); return false;") x3
+
+                div.ui-grid-c
+                    div.ui-block-a
+                        button(type="submit", onclick="submitScore(1); return false;") 1
+                    div.ui-block-b
+                        button(type="submit", onclick="submitScore(2); return false;") 2
+                    div.ui-block-c
+                        button(type="submit", onclick="submitScore(3); return false;") 3
+                    div.ui-block-d
+                        button(type="submit", onclick="submitScore(4); return false;") 4
+
+                    div.ui-block-a
+                        button(type="submit", onclick="submitScore(5); return false;") 5
+                    div.ui-block-b
+                        button(type="submit", onclick="submitScore(6); return false;") 6
+                    div.ui-block-c
+                        button(type="submit", onclick="submitScore(7); return false;") 7
+                    div.ui-block-d
+                        button(type="submit", onclick="submitScore(8); return false;") 8
+
+                    div.ui-block-a
+                        button(type="submit", onclick="submitScore(9); return false;") 9
+                    div.ui-block-b
+                        button(type="submit", onclick="submitScore(10); return false;") 10
+                    div.ui-block-c
+                        button(type="submit", onclick="submitScore(11); return false;") 11
+                    div.ui-block-d
+                        button(type="submit", onclick="submitScore(12); return false;") 12
+                        
+                    div.ui-block-a
+                        button(type="submit", onclick="submitScore(13); return false;") 13
+                    div.ui-block-b
+                        button(type="submit", onclick="submitScore(14); return false;") 14
+                    div.ui-block-c
+                        button(type="submit", onclick="submitScore(15); return false;") 15
+                    div.ui-block-d
+                        button(type="submit", onclick="submitScore(16); return false;") 16
+                        
+                    div.ui-block-a
+                        button(type="submit", onclick="submitScore(17); return false;") 17
+                    div.ui-block-b
+                        button(type="submit", onclick="submitScore(18); return false;") 18
+                    div.ui-block-c
+                        button(type="submit", onclick="submitScore(19); return false;") 19
+                    div.ui-block-d
+                        button(type="submit", onclick="submitScore(20); return false;") 20
+
+                button(type="submit", data-theme="a", onclick="submitScore(25); return false;") Bulls Eye!
+
+        script(src="http://code.jquery.com/jquery-1.6.4.min.js")
+        script(src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js")
+        script(src="/socket.io/socket.io.js")
+        script(src="/js/darts.js")            
+
+            

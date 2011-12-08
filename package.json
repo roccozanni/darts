@@ -1,0 +1,10 @@
+{
+    "name": "darts",
+    "version": "0.0.1",
+    "dependencies":
+    {
+        "express": 		"2.5.1",
+        "socket.io": 	"0.8.7",
+        "jade":			"0.19.0"
+    }
+}
