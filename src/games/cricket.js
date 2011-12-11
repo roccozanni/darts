@@ -31,7 +31,7 @@ module.exports = function(emitter, players, limit)
             if (scores[player] === undefined ) { return; }
             if (!scores[player][score]) { return; }
 
-            scores[player][score] -= multiplier;
+            scores[player][score] = Math.max(0, scores[player][score] - multiplier);
             emitter('game.scores', scores);
 
             var winner = true;

@@ -19,7 +19,6 @@ html(lang="en")
                 a(href="#game", data-theme="b", data-icon="home", data-iconpos="notext") Home
                 h1 
                     span#current_game None
-                a(href="#submit", data-theme="b", data-icon="plus", data-iconpos="notext", data-rel="dialog", data-transition="pop") Submit score
             div(data-role="content")
 
                 div.ui-grid-b
@@ -39,15 +38,6 @@ html(lang="en")
                         span#score_Marco.ui-li-count 0
                     li(data-icon="false") Alex
                         span#score_Alex.ui-li-count 0
-
-                h2#winner
-                
-
-        div(data-role="page", id="submit")
-            div(data-role="header")
-                h1 
-                    span.current_player None
-            div(data-role="content")
                 
                 div.ui-grid-a
                     div.ui-block-a

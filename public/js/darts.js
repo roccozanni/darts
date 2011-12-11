@@ -80,6 +80,5 @@ $(document).ready(function() {
 
     // Game finished
     socket.on('game.finished', function (data) {
-        $('.ui-dialog').dialog('close');
     });
 });
